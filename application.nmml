@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="GeekProject" package="ru.geekparty.project.GeekProject" version="1.0.0" company="Null/" />
+	
+	<!-- output -->
+	<app main="ru.geekparty.project.Main" file="GeekProject" path="bin" />
+	
+	<window background="#000000" fps="24" />
+	<window width="640" height="960" unless="mobile" />
+	<window orientation="landscape" vsync="true" antialiasing="0" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="nme" />
+	
+	<!-- assets -->
+	<icon path="assets/nme.svg" />
+	<assets path="assets/img" rename="img" />
+	
+	<library path="assets/gui.swf" />
+	
+	<!-- DLLs -->
+	<ndll name="std" />
+	<ndll name="regexp" />
+	<ndll name="zlib" />
+	<ndll name="nme" haxelib="nme" />
+
+	<!-- optimize JS output -->
+	<haxeflag name="--dead-code-elimination" if="html5" />
+	<haxeflag name="--js-modern" if="html5" />
+	
+</project>
